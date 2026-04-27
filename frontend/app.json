@@ -45,7 +45,7 @@
       "reactCompiler": true
     },
     "extra": {
-      "residentApiUrl": "http://10.0.2.2:5000"
+      "residentApiUrl": "http://10.0.2.2:5002"
     }
   }
 }

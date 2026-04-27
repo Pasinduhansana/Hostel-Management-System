@@ -1,50 +1,26 @@
-# Welcome to your Expo app 👋
+# Hostel Management Monorepo
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+This repository is now split into two applications:
 
-## Get started
+- `frontend/` -> React Native (Expo) app
+- `backend/` -> Node.js + Express + MongoDB API
 
-1. Install dependencies
+## Recommended Architecture
 
-   ```bash
-   npm install
-   ```
+- Keep all mobile UI, routing, reusable components, hooks, and client-side validation in `frontend/`.
+- Keep database models, API routes, controllers, and server-side validation in `backend/`.
+- Treat frontend and backend as independent deployable units.
+- Use shared API contracts (DTO/types) where possible to reduce mismatch between app and API.
 
-2. Start the app
+## Run Commands (from repo root)
 
-   ```bash
-   npx expo start
-   ```
+- Install frontend deps: `cd frontend && npm install`
+- Install backend deps: `cd backend && npm install`
+- Start Expo app: `npm run android` or `npm run web`
+- Start backend API: `npm run backend`
 
-In the output, you'll find options to open the app in a
+## Folder Notes
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
-
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
-
-## Get a fresh project
-
-When you're ready, run:
-
-```bash
-npm run reset-project
-```
-
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
-
-## Learn more
-
-To learn more about developing your project with Expo, look at the following resources:
-
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
-
-## Join the community
-
-Join our community of developers creating universal apps.
-
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+- Resident Management frontend routes are in `frontend/app/(tabs)/residents/`.
+- Resident reusable components are in `frontend/components/resident/`.
+- Resident API server code is in `backend/src/`.
